@@ -1,0 +1,31 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    link(rel="preconnect" href="https://fonts.googleapis.com")
+    link(rel="preconnect" href="https://fonts.gstatic.com" crossorigin)
+    link(href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet")
+    link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css")
+    link(rel="stylesheet", href="https://use.fontawesome.com/releases/v5.8.1/css/all.css")
+    link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap")
+    link(rel="stylesheet", href="assets/css/style.css")
+    title Work Day Scheduler
+  body
+    header.jumbotron
+      h1.display-3 Work Day Scheduler
+      p.lead A simple calendar app for scheduling your work day
+      #currentDay.lead
+    main.container
+      .calendar
+        #timeLine
+        each num,index in [...Array(10).keys()].map(n => n + 8)
+          div(class=`row-${num}`).time-block
+          h2(class=`row-${num}`) #{`${num}00`.replace(/^\d{3}$/,'0$&')}
+          textarea(class=`row-${num}` type="text" name=`hour_${num}`)
+          button(class=`row-${num}` name=`save_${num}`).save-button.material-icons save
+    script(src="https://code.jquery.com/jquery-3.4.1.min.js")
+    script(src="https://cdn.jsdelivr.net/npm/luxon@2.4.0/build/global/luxon.min.js")
+    script(src="assets/javascript/script.js") 

@@ -1,0 +1,100 @@
+html{
+  font-size:16px;
+}
+main{
+  --saveSquareSize:4rem;
+  --blockHue: 221deg;
+  --blockSaturation: 100%;
+  --blockLightness: 67%;
+  --blockOpacity:0;
+  --trackBorderWidth:2px;
+  --darkBackground: hsla(0,0%,41%,0.5);
+  padding-block:4%;
+}
+textarea{
+  resize: none;
+}
+.calendar{
+  display:grid;
+  grid-template-columns:5rem 1fr var(--saveSquareSize);
+  grid-auto-rows:var(--saveSquareSize);
+  position:relative;
+  overflow:hidden;
+  isolation:isolate;
+  border-radius:10px;
+  // Shadow #2 from https://getcssscan.com/css-box-shadow-examples
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.time-block{
+  grid-column:1 / -1;
+  transition: {
+    property: background-color;
+    duration:500ms;
+    timing-function: ease-in-out;
+  };
+  z-index:-2;
+  background-color: hsla(var(--blockHue),var(--blockSaturation),var(--blockLightness),var(--blockOpacity));
+  &:not(.row-17){
+    border-bottom:var(--trackBorderWidth) dashed var(--darkBackground);
+  }
+}
+.calendar > h2{
+  grid-column:1;
+  align-self:center;
+  justify-self: end;
+  margin:0 0.5rem 0 0;
+  font-size:1.5rem;
+}
+.calendar > textarea{
+  --textBackground: hsla(0deg, 0%, 100%, 0.5);
+  grid-column:2;
+  background-color:var(--textBackground);
+  border: 0px solid transparent;
+}
+.save-button{
+  --buttonHue:180;
+  --buttonSaturation:100%;
+  --buttonLightness:50%;
+  grid-column:3;
+  background-color:hsl(var(--buttonHue),var(--buttonSaturation),var(--buttonLightness));
+  color:hsl(0,0%,94%);
+  font-size:2rem;
+  transition:background-color 500ms ease-in-out;
+  &:is(:hover,:focus){
+    --buttonLightness:33%;
+  }
+  &:not(.row-17){
+    border: {
+      bottom:var(--trackBorderWidth) dashed var(--darkBackground);
+      top:0;
+      left:0;
+      right:0;
+    };
+  }
+  &.row-17{
+    border:0;
+  }
+}
+.current-hour{
+  --blockOpacity:1;
+}
+@each $time in 8,9,10,11,12,13,14,15,16,17{
+  .row-#{$time}{
+    grid-row:$time - 7;
+  }
+}
+
+#timeLine{
+  position:absolute;
+  top:0;
+  grid-column:1 / -1;
+  width:100%;
+  z-index:-1;
+  border-bottom:var(--trackBorderWidth) dashed black;
+  background-color: var(--darkBackground);
+  transition: {
+    property: bottom;
+    duration: 500ms;
+    timing-function: ease-in-out;
+  }
+}

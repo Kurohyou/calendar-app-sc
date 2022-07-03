@@ -1,0 +1,161 @@
+html {
+  font-size: 16px;
+}
+
+main {
+  --saveSquareSize:4rem;
+  --blockHue: 221deg;
+  --blockSaturation: 100%;
+  --blockLightness: 67%;
+  --blockOpacity:0;
+  --trackBorderWidth:2px;
+  --darkBackground: hsla(0,0%,41%,0.5);
+  padding-block: 4%;
+}
+
+textarea {
+  resize: none;
+}
+
+.calendar {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 5rem 1fr var(--saveSquareSize);
+  grid-template-columns: 5rem 1fr var(--saveSquareSize);
+  grid-auto-rows: var(--saveSquareSize);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: 10px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+          box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.time-block {
+  grid-column: 1/-1;
+  -webkit-transition-property: background-color;
+  transition-property: background-color;
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+  z-index: -2;
+  background-color: hsla(var(--blockHue), var(--blockSaturation), var(--blockLightness), var(--blockOpacity));
+}
+.time-block:not(.row-17) {
+  border-bottom: var(--trackBorderWidth) dashed var(--darkBackground);
+}
+
+.calendar > h2 {
+  -ms-grid-column: 1;
+  grid-column: 1;
+  -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: end;
+      justify-self: end;
+  margin: 0 0.5rem 0 0;
+  font-size: 1.5rem;
+}
+
+.calendar > textarea {
+  --textBackground: hsla(0deg, 0%, 100%, 0.5);
+  -ms-grid-column: 2;
+  grid-column: 2;
+  background-color: var(--textBackground);
+  border: 0px solid transparent;
+}
+
+.save-button {
+  --buttonHue:180;
+  --buttonSaturation:100%;
+  --buttonLightness:50%;
+  -ms-grid-column: 3;
+  grid-column: 3;
+  background-color: hsl(var(--buttonHue), var(--buttonSaturation), var(--buttonLightness));
+  color: hsl(0deg, 0%, 94%);
+  font-size: 2rem;
+  -webkit-transition: background-color 500ms ease-in-out;
+  transition: background-color 500ms ease-in-out;
+}
+.save-button:is(:hover, :focus) {
+  --buttonLightness:33%;
+}
+.save-button:not(.row-17) {
+  border-bottom: var(--trackBorderWidth) dashed var(--darkBackground);
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+}
+.save-button.row-17 {
+  border: 0;
+}
+
+.current-hour {
+  --blockOpacity:1;
+}
+
+.row-8 {
+  -ms-grid-row: 1;
+  grid-row: 1;
+}
+
+.row-9 {
+  -ms-grid-row: 2;
+  grid-row: 2;
+}
+
+.row-10 {
+  -ms-grid-row: 3;
+  grid-row: 3;
+}
+
+.row-11 {
+  -ms-grid-row: 4;
+  grid-row: 4;
+}
+
+.row-12 {
+  -ms-grid-row: 5;
+  grid-row: 5;
+}
+
+.row-13 {
+  -ms-grid-row: 6;
+  grid-row: 6;
+}
+
+.row-14 {
+  -ms-grid-row: 7;
+  grid-row: 7;
+}
+
+.row-15 {
+  -ms-grid-row: 8;
+  grid-row: 8;
+}
+
+.row-16 {
+  -ms-grid-row: 9;
+  grid-row: 9;
+}
+
+.row-17 {
+  -ms-grid-row: 10;
+  grid-row: 10;
+}
+
+#timeLine {
+  position: absolute;
+  top: 0;
+  grid-column: 1/-1;
+  width: 100%;
+  z-index: -1;
+  border-bottom: var(--trackBorderWidth) dashed black;
+  background-color: var(--darkBackground);
+  -webkit-transition-property: bottom;
+  transition-property: bottom;
+  -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
+  -webkit-transition-timing-function: ease-in-out;
+          transition-timing-function: ease-in-out;
+}

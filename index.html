@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans&amp;display=swap">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Work Day Scheduler</title>
+  </head>
+  <body>
+    <header class="jumbotron">
+      <h1 class="display-3">Work Day Scheduler</h1>
+      <p class="lead">A simple calendar app for scheduling your work day</p>
+      <div class="lead" id="currentDay"></div>
+    </header>
+    <main class="container">
+      <div class="calendar">
+        <div id="timeLine"></div>
+        <div class="row-8 time-block"></div>
+        <h2 class="row-8">0800</h2>
+        <textarea class="row-8" type="text" name="hour_8"></textarea>
+        <button class="row-8 save-button material-icons" name="save_8">save</button>
+        <div class="row-9 time-block"></div>
+        <h2 class="row-9">0900</h2>
+        <textarea class="row-9" type="text" name="hour_9"></textarea>
+        <button class="row-9 save-button material-icons" name="save_9">save</button>
+        <div class="row-10 time-block"></div>
+        <h2 class="row-10">1000</h2>
+        <textarea class="row-10" type="text" name="hour_10"></textarea>
+        <button class="row-10 save-button material-icons" name="save_10">save</button>
+        <div class="row-11 time-block"></div>
+        <h2 class="row-11">1100</h2>
+        <textarea class="row-11" type="text" name="hour_11"></textarea>
+        <button class="row-11 save-button material-icons" name="save_11">save</button>
+        <div class="row-12 time-block"></div>
+        <h2 class="row-12">1200</h2>
+        <textarea class="row-12" type="text" name="hour_12"></textarea>
+        <button class="row-12 save-button material-icons" name="save_12">save</button>
+        <div class="row-13 time-block"></div>
+        <h2 class="row-13">1300</h2>
+        <textarea class="row-13" type="text" name="hour_13"></textarea>
+        <button class="row-13 save-button material-icons" name="save_13">save</button>
+        <div class="row-14 time-block"></div>
+        <h2 class="row-14">1400</h2>
+        <textarea class="row-14" type="text" name="hour_14"></textarea>
+        <button class="row-14 save-button material-icons" name="save_14">save</button>
+        <div class="row-15 time-block"></div>
+        <h2 class="row-15">1500</h2>
+        <textarea class="row-15" type="text" name="hour_15"></textarea>
+        <button class="row-15 save-button material-icons" name="save_15">save</button>
+        <div class="row-16 time-block"></div>
+        <h2 class="row-16">1600</h2>
+        <textarea class="row-16" type="text" name="hour_16"></textarea>
+        <button class="row-16 save-button material-icons" name="save_16">save</button>
+        <div class="row-17 time-block"></div>
+        <h2 class="row-17">1700</h2>
+        <textarea class="row-17" type="text" name="hour_17"></textarea>
+        <button class="row-17 save-button material-icons" name="save_17">save</button>
+      </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/luxon@2.4.0/build/global/luxon.min.js"></script>
+    <script src="assets/javascript/script.js"> </script>
+  </body>
+</html>
