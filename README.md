@@ -8,9 +8,6 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-<a href="https://github.com/Kurohyou/calendar-app-sc">
-<img src="images/logo.png" alt="Logo" width="80" height="80">
-</a>
 <h3 align="center">Daily Todo App</h3>
 <p align="center">
 An application to track to do items on an hourly basis throughout normal work hours (8am - 5pm).
@@ -72,6 +69,7 @@ Project Link: [https://github.com/Kurohyou/calendar-app-sc](https://github.com/K
 <p align="right">(<a href="#top">back to top</a>)</p>
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
+
 [contributors-shield]: https://img.shields.io/github/contributors/Kurohyou/calendar-app-sc.svg?style=flat
 [contributors-url]: https://github.com/Kurohyou/calendar-app-sc/graphs/contributors
 [forks-shield]: https://img.shields.io/github/forks/Kurohyou/calendar-app-sc.svg?style=flat
