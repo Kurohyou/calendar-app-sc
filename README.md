@@ -42,7 +42,7 @@ An application to track to do items on an hourly basis throughout normal work ho
 <!-- ABOUT THE PROJECT -->
 
 ## About The Project
-[![Product Name Screen Shot][product-screenshot]]
+![Product Name Screen Shot][product-screenshot]
 The app is designed for tracking to do items on a daily basis.
 <p align="right">(<a href="#top">back to top</a>)</p>
 
