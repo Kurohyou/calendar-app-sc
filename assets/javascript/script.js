@@ -5,13 +5,16 @@ const DateTime = luxon.DateTime;
   const timeLine = document.getElementById('timeLine');
   const intervalID = 0;
   //Get local storage of events or initialize the events.
-  const calendarEvents = localStorage.getItem('calendarEvents') ?
-    JSON.parse(localStorage.getItem('calendarEvents')) :
+  const storageCalendar = JSON.parse(localStorage.getItem('calendarData'));
+  const calendarData = storageCalendar ||
     [...Array(10).keys()]
       .reduce((memo,n) => {
-        memo[`hour_${n}`] = '';
+        memo.data[`hour_${n+8}`] = '';
         return memo;
-      },{});
+      },{
+        storedDay:null,
+        data:{}
+      });
   const dateLog = {
     day:null,
     hour:null,
@@ -21,14 +24,14 @@ const DateTime = luxon.DateTime;
   const saveData = (event) => {
     const saveHour = event.target.name.replace(/save_/,'');
     const textarea = $(`textarea[name="hour_${saveHour}"]`);
-    calendarEvents[`hour_${saveHour}`] = textarea.val();
-    localStorage.setItem('calendarEvents',JSON.stringify(calendarEvents));
+    calendarData.data[`hour_${saveHour}`] = textarea.val();
+    localStorage.setItem('calendarData',JSON.stringify(calendarData));
   };
   
   $('.save-button').on('click',saveData);
 
   const loadData = () => {
-    Object.entries(calendarEvents).forEach(([key,value]) => {
+    Object.entries(calendarData.data).forEach(([key,value]) => {
       $(`textarea[name="${key}"]`).val(value);
     });
   };
@@ -58,6 +61,7 @@ const DateTime = luxon.DateTime;
     if(!intervalID){
       setInterval(syncDate,1000);
     }
+    updateDailyLog();
   };
 
   /**
@@ -90,8 +94,16 @@ const DateTime = luxon.DateTime;
    */
   const updateDateDisplay = (date) => {
     currentDayContainer.replaceChildren(date.toLocaleString(DateTime.DATE_HUGE));
-    Object.keys(calendarEvents).forEach(key => calendarEvents[key] = '');
-    localStorage.setItem('calendarEvents',JSON.stringify(calendarEvents));
+  };
+
+  const updateDailyLog = () => {
+    if(dateLog.day !== calendarData.storedDay){
+      console.log('dateLog',dateLog);
+      console.log('storedDay',calendarData.storedDay);
+      calendarData.storedDay = dateLog.day;
+      Object.keys(calendarData.data).forEach(key => calendarData.data[key] = '');
+      localStorage.setItem('calendarData',JSON.stringify(calendarData));
+    }
   };
   
   //Begin interface sync

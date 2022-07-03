@@ -1,5 +1,6 @@
 html{
   font-size:16px;
+  font-family:"Exo 2";
 }
 main{
   --saveSquareSize:4rem;
@@ -13,6 +14,12 @@ main{
 }
 textarea{
   resize: none;
+}
+h1,h2{
+  font-family:Aldrich;
+}
+.lead{
+  font-family:"Exo 2";
 }
 .calendar{
   display:grid;
@@ -46,10 +53,15 @@ textarea{
   font-size:1.5rem;
 }
 .calendar > textarea{
-  --textBackground: hsla(0deg, 0%, 100%, 0.5);
+  --blockOpacity:0.5;
+  --textBackground: hsla(0deg, 0%, 100%, var(--blockOpacity));
   grid-column:2;
   background-color:var(--textBackground);
   border: 0px solid transparent;
+  transition:background-color 500ms ease-in-out;
+  &:focus{
+    --blockOpacity:0.7;
+  }
 }
 .save-button{
   --buttonHue:180;
@@ -87,6 +99,7 @@ textarea{
 #timeLine{
   position:absolute;
   top:0;
+  bottom:100%;
   grid-column:1 / -1;
   width:100%;
   z-index:-1;
