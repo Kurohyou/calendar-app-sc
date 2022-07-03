@@ -19,20 +19,15 @@ const DateTime = luxon.DateTime;
   };
   
   const saveData = (event) => {
-    console.log('saving Data');
     const saveHour = event.target.name.replace(/save_/,'');
     const textarea = $(`textarea[name="hour_${saveHour}"]`);
-    console.log('textarea',textarea);
     calendarEvents[`hour_${saveHour}`] = textarea.val();
-    console.log('calendarEvents',calendarEvents);
     localStorage.setItem('calendarEvents',JSON.stringify(calendarEvents));
   };
   
   $('.save-button').on('click',saveData);
 
   const loadData = () => {
-    console.log('loading data');
-    console.log('calendarEvents',calendarEvents);
     Object.entries(calendarEvents).forEach(([key,value]) => {
       $(`textarea[name="${key}"]`).val(value);
     });
