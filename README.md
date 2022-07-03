@@ -15,7 +15,7 @@ An application to track to do items on an hourly basis throughout normal work ho
 <a href="https://github.com/Kurohyou/calendar-app-sc"><strong>Explore the docs »</strong></a>
 <br/>
 <br/>
-<a href="https://github.com/Kurohyou/calendar-app-sc">View Demo</a>
+<a href="https://kurohyou.github.io/calendar-app-sc/">View Site</a>
 ·
 <a href="https://github.com/Kurohyou/calendar-app-sc/issues">Report Bug</a>
 ·
