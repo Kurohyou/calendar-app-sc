@@ -47,10 +47,14 @@ The app is designed for tracking to do items on a daily basis.
 <p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Built With
-- Bootstrap
-- Javascript (JQuery)
-- CSS (SCSS)
-- HTML (PUG)
+- Javascript
+  - jQuery
+  - Luxon
+- CSS
+  - Bootstrap
+  - SCSS
+- HTML
+  - PUG
 <p align="right">(<a href="#top">back to top</a>)</p>
 <!-- GETTING STARTED -->
 
