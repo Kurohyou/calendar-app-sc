@@ -68,7 +68,7 @@ Distributed under the MIT License. See [LICENSE.txt](LICENSE.txt) for more infor
 <!-- CONTACT -->
 
 ## Contact
-Your Name - [@Kurohyou](https://twitter.com/Kurohyou) - email@example.com
+Your Name - [@Kurohyou](https://twitter.com/Kurohyou)
 Project Link: [https://github.com/Kurohyou/calendar-app-sc](https://github.com/Kurohyou/calendar-app-sc)
 <p align="right">(<a href="#top">back to top</a>)</p>
 <!-- MARKDOWN LINKS & IMAGES -->
